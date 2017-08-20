@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Raamatukogu</title>
+
+        <link href="{{ url_for('static', filename='min.min.css') }}" rel="stylesheet" type="text/css">
+        <script type="text/javascript">
+            SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+        </script>
+        <style type="text/css">
+            .pull-right {
+                float: right;
+            }
+            .table input, .table select {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="nav" tabindex="-1" onclick="this.focus()" id="navbar">
+            <div class="container">
+                <a class="pagename current" href="">Raamatukogu</a>
+                <a href="#kataloog">Kataloog</a>
+                <a href="#lugejad">Lugejad</a>
+                <a href="#laenutus">Laenutus</a>
+            </div>
+        </nav>
+        <button class="btn-close btn btn-sm">×</button>
+
+        <div class="container">
+            <h2 id="kataloog">Kataloog <button class="btn btn-sm btn-b smooth pull-right" title="Värskenda"><i class="ico">⟳</i></button></h2>
+
+            <table class="table" id="table-kataloog">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Pealkiri</th>
+                        <th>Autor</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td><input type="text" id="kataloog-pealkiri"></td>
+                        <td><input type="text" id="kataloog-autor"></td>
+                        <td><button id="kataloog-lisa" class="btn btn-a btn-sm smooth">Lisa</button</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <h2 id="lugejad">Lugejad <button class="btn btn-sm btn-b smooth pull-right" title="Värskenda"><i class="ico">⟳</i></button></h2>
+
+            <table class="table" id="table-lugejad">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Nimi</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td><input type="text" id="lugejad-nimi"></td>
+                        <td><button id="lugejad-lisa" class="btn btn-a btn-sm smooth">Lisa</button</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <h2 id="laenutus">Laenutus <button class="btn btn-sm btn-b smooth pull-right" title="Värskenda"><i class="ico">⟳</i></button></h2>
+
+            <table class="table" id="table-laenutus">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Raamat</th>
+                        <th>Laenutaja</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td><select id="laenutus-raamat"></select></td>
+                        <td><select id="laenutus-laenaja"></select></td>
+                        <td><button id="laenutus-lisa" class="btn btn-a btn-sm smooth">Laenuta</button</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+    </body>
+</html>

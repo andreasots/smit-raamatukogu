@@ -1,0 +1,5 @@
+alembic
+Flask
+Flask-REST-JSONAPI
+Flask-SQLAlchemy
+psycopg2
