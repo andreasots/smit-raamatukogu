@@ -3,3 +3,5 @@ Flask
 Flask-REST-JSONAPI
 Flask-SQLAlchemy
 psycopg2
+pytest
+requests

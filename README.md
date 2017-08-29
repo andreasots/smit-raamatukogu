@@ -1,6 +1,6 @@
 # smit-raamatukogu
 
-Time spent: 6h20m
+Time spent: 8h
 
 ## Setup
 
