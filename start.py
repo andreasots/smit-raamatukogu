@@ -10,7 +10,7 @@ app.register_blueprint(raamatukogu.api.blueprint, url_prefix="/api/v1")
 app.register_blueprint(raamatukogu.healthcheck.blueprint, url_prefix="/api")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, threaded=True)
 else:
     import logging
     app.logger.addHandler(logging.StreamHandler())
